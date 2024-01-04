@@ -13,7 +13,10 @@
 * Pagination - Only 15 items are displayed per page, and user can move to next and previous pages and it also works when using with filtering and searching.
 * Display page - When a Media is selected, details related to the Media are being displayed.
 
-<img src="src/assets/localhost_4200_signup (1).png>
+![localhost_4200_signup](https://github.com/TejaSaii/Flixnet-frontend/assets/116777552/6e55ae04-77ae-4123-98dc-dcf097c2a4b3)
+![localhost_4200_signup (2)](https://github.com/TejaSaii/Flixnet-frontend/assets/116777552/62ab0677-06b7-47e3-adb0-73cd3665a804)
+![localhost_4200_signup (3)](https://github.com/TejaSaii/Flixnet-frontend/assets/116777552/c1e7f07a-64c4-4680-ba5a-b3328c4a341d)
+
 
 ## Technologies Used
 
