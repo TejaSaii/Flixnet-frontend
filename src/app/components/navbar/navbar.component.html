@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand">Flixnet</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="!isHomePage? 'd-flex justify-content-end': ''" id="navbarSupportedContent">
+      <ng-container *ngIf="isHomePage; else loginPageBlock">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-4">
+            <a class="nav-link" style="cursor: pointer;" (click)="onDashboardClick()">Dashboard</a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link" style="cursor: pointer;" (click)="onMoviesClick()">Movies</a>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link" style="cursor: pointer;" (click)="onTvshowsClick()">TV Shows</a>
+          </li>
+        </ul>
+        <form class="d-flex mx-5" role="search" (ngSubmit)="onSearch()">
+          <input class="form-control me-2" [(ngModel)]="keyword" name="search" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <button type="button" class="btn btn-primary mx-4" [routerLink]="'/login'" (click)="logOut()">Log Out</button>
+        <div class="user-icon-container">
+          <img src="../../../assets/user.png" alt="user-icon">
+        </div>
+      </ng-container>
+      <ng-template #loginPageBlock>
+        <button [routerLink]="'/login'" type="button" class="btn btn-secondary mx-4">Login</button>
+        <button [routerLink]="'/signup'" type="button" class="btn btn-primary mx-4">Sign Up</button>
+      </ng-template>
+      <!-- <button type="button" class="btn btn-secondary ms-4">Secondary</button> -->
+    </div>
+  </div>
+</nav>

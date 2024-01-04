@@ -1,0 +1,8 @@
+<app-navbar [isHomePage]="isHomePage"></app-navbar>
+<div class="d-flex flex-column align-items-center">
+<h5 *ngIf="keyword" class="display-6">Search results for {{keyword}}...</h5>
+<div class="container mt-4">
+   <app-content></app-content>
+</div>
+<app-footer></app-footer>
+</div>

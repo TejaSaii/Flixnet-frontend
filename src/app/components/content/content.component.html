@@ -1,0 +1,12 @@
+<div class="container text-center">
+  <div class="row row-cols-3">
+    <ng-container *ngIf="!notFound; else notFoundBlock">
+      <div class="col mb-3.5" *ngFor="let video of videos">
+        <div class="p-3"><app-video-tile [video]="video"></app-video-tile></div>
+      </div>
+    </ng-container>
+    <ng-template #notFoundBlock>
+      <h1 class="display-6 text-danger">No Videos Found</h1>
+    </ng-template>
+  </div>
+</div>

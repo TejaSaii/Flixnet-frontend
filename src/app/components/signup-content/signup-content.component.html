@@ -1,0 +1,20 @@
+<div class="card text-center mb-3 mx-auto p-4" style="width: 18rem;">
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()">
+            <h6 *ngIf="showError" style="color: red;">Please check the inputs and try again</h6>
+            <div class="mb-3">
+                <label for="email" class="form-label fw-bold">Email address</label>
+                <input type="email" class="form-control" [(ngModel)]="formData.email" name="email" required placeholder="yourname@email.com">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label fw-bold">Password</label>
+                <input type="password" class="form-control" [(ngModel)]="formData.password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="age" name="age" class="form-label fw-bold">Age</label>
+                <input type="number" class="form-control" [(ngModel)]="formData.age" name="age" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+</div>

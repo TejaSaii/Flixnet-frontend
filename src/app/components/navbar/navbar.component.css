@@ -1,0 +1,14 @@
+.user-icon-container {
+    border: 2px solid #0000009a;
+    border-radius: 5px;
+}
+
+.user-icon-container img {
+    width: 25px;
+    height: 25px;
+}
+
+.user-icon-container:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
