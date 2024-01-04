@@ -21,7 +21,7 @@ export class SignupContentComponent {
   formData: User = {
     email: "",
     password: "",
-    age: 1,
+    age: 0
   }
 
   showError: boolean = false;

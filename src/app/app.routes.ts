@@ -8,5 +8,4 @@ export const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
   {path: 'videos', component: HomePageComponent}, 
   {path: 'signup', component: SignupPageComponent}, 
-  // {path: 'video', component: }, 
 ];

@@ -18,7 +18,7 @@
             <a class="nav-link" style="cursor: pointer;" (click)="onTvshowsClick()">TV Shows</a>
           </li>
         </ul>
-        <form class="d-flex mx-5" role="search" (ngSubmit)="onSearch()">
+        <form *ngIf="!showId" class="d-flex mx-5" role="search" (ngSubmit)="onSearch()">
           <input class="form-control me-2" [(ngModel)]="keyword" name="search" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>

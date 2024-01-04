@@ -1,0 +1,17 @@
+<div class="card text-center">
+    <div class="card-header">
+    {{details.type}}
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">{{details.title}}</h4>
+        <h6 *ngIf="details.duration"class="card-subtitle">{{details.duration}}</h6>
+        <p class="card-text">{{details.description}}</p>
+        <h6 *ngIf="details.rating"class="card-subtitle">{{details.rating}}</h6>
+        <h6 *ngIf="details.director"class="card-subtitle">Director: {{details.director}}</h6>
+        <h6 *ngIf="details.release_year"class="card-subtitle">{{details.release_year}}</h6>
+        <h6 *ngIf="details.country"class="card-subtitle">{{details.country}}</h6>
+    </div>
+    <div class="card-footer text-body-secondary">
+    Date added: {{details.date_added}}
+    </div>
+</div>

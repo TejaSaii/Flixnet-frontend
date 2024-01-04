@@ -8,6 +8,10 @@ import { KeywordService } from '../../services/keyword.service';
 import { TypeService } from '../../services/type.service';
 import { PageService } from '../../services/page.service';
 import { environment } from '../../../environments/environment';
+import { ShowIdService } from '../../services/show-id.service';
+import { VideoDetailRes } from '../../types/VideoDetailRes';
+import { VideoDetailService } from '../../services/video-detail.service';
+import { TotalPagesService } from '../../services/total-pages.service';
 
 @Component({
   selector: 'app-content',
@@ -26,11 +30,17 @@ export class ContentComponent implements OnInit {
   url: string = `${this.apiUrl}/app/videos`;
   params: string[] = [];
   combinedParam: string = '';
+  details!: Video;
+  showId: string = '';
+  totalPages: number = 1;
 
-  constructor(private http: HttpClient, 
-    private keywordService: KeywordService, 
+  constructor(private http: HttpClient,
+    private keywordService: KeywordService,
     private typeService: TypeService,
-    private pageService: PageService) {
+    private pageService: PageService,
+    private showIdService: ShowIdService,
+    private videoDetailService: VideoDetailService,
+    private totalPagesService: TotalPagesService) {
 
     this.getVideos(this.url);
   }
@@ -48,7 +58,9 @@ export class ContentComponent implements OnInit {
       this.pages = page;
       this.fillParams();
     })
-
+    this.showIdService.showId.subscribe(showId => {
+      this.showId = showId;
+    })
   }
 
   fillParams() {
@@ -64,19 +76,40 @@ export class ContentComponent implements OnInit {
     }
     if (this.params.length) {
       const combinedParam = this.params.join('&');
-      this.getVideos(this.url+'?'+combinedParam);
+      this.getVideos(this.url + '?' + combinedParam);
     }
   }
 
-  getVideos(url:string) {
+  getVideos(url: string) {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${localStorage.getItem('token')}`,
       'Content-type': 'application/json'
     });
 
     this.http.get<VideoRes>(url, { headers }).subscribe({
-      next: (v) => this.videos = v.result,
+      next: (v) => {
+        this.videos = v.result;
+        this.totalPagesService.changeTotalPages(v.meta_data.total_pages);
+      },
       error: () => this.notFound = true
     })
+  }
+
+  handleClick(showId: string) {
+    this.showIdService.changeShowId(showId);
+    this.getDetails();
+  }
+  getDetails() {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      'Content-type': 'application/json'
+    });
+    this.http.get<VideoDetailRes>(this.apiUrl + `/app/video/${this.showId}`, { headers }).subscribe({
+      next: (v) => {
+        this.details = v.result;
+        this.videoDetailService.changeVideoDetail(v.result);
+      },
+      error: () => this.notFound = true,
+    });
   }
 }

@@ -1,7 +1,12 @@
-<nav aria-label="Pagination">
-  <ul class="pagination">
-    <li class="page-item" style="cursor: pointer;"><a class="page-link" (click)="decrementPage()">Previous</a></li>
-    <li class="page-item"><a class="page-link">{{page}}</a></li>
-    <li class="page-item" style="cursor: pointer;"><a class="page-link" (click)="incrementPage()">Next</a></li>
-  </ul>
-</nav>
+<ng-container *ngIf="!showId; else showBackBlock">
+  <nav aria-label="Pagination">
+    <ul class="pagination">
+      <li class="page-item" style="cursor: pointer;"><a class="page-link" (click)="decrementPage()">Previous</a></li>
+      <li class="page-item"><a class="page-link">{{page}}</a></li>
+      <li class="page-item" style="cursor: pointer;"><a class="page-link" (click)="incrementPage()">Next</a></li>
+    </ul>
+  </nav>
+</ng-container>
+<ng-template #showBackBlock>
+  <button type="button" class="btn btn-secondary mt-4" (click)="goBack()">Back</button>
+</ng-template>
