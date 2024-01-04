@@ -1,8 +1,8 @@
-# Flixnet - an OTT platform clone
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+# Flixnet - a minimal OTT platform clone
+[Hosted here](https://lighthearted-churros-32fcbc.netlify.app/)
 
 ## Key Features
+
 * A SignUp page for new users to register into the application using Email, Password and Age
 * A Login page for users to login into the application using Email and Password
 * A Dashboard which shows the list of all the Movies and TV Shows present in the DB
@@ -13,21 +13,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Pagination - Only 15 items are displayed per page, and user can move to next and previous pages and it also works when using with filtering and searching.
 * Display page - When a Media is selected, details related to the Media are being displayed.
 
-## Tech Stack
+<img src="src/assets/localhost_4200_signup (1).png>
 
+## Technologies Used
 
-## Development server
+* JWT
+* Angular & Angular CLI 17
+* MongoDB 
+* Express
+* Node.js
+* npm
+* Typescript
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Note - This is the front-end part of the repo, for backend part [click here](https://github.com/TejaSaii/FlixNet)
 
-## Code scaffolding
+## Build Process
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* `npm i` to install all the dependencies.
+* Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* Now the front-end part is live locally.
+* For backend build process and source code [click here](https://github.com/TejaSaii/FlixNet)
+* `ng build` to build the project which compiles TS files to JS under /dist folder
