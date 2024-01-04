@@ -21,6 +21,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     this.pageService.page.subscribe(data => this.page = data);
     this.showIdService.showId.subscribe(data => this.showId = data);
+    this.totalPagesService.totalPages.subscribe(data => this.totalPages = data);
   }
 
   incrementPage() {
