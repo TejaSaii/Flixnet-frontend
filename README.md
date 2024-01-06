@@ -27,6 +27,8 @@
 * Node.js
 * npm
 * Typescript
+* HTML/CSS
+* Bootstrap
 
 Note - This is the front-end part of the repo, for backend part [click here](https://github.com/TejaSaii/FlixNet)
 
