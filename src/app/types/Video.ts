@@ -5,7 +5,7 @@ export interface Video {
   title: string;
   director: string;
   country: string;
-  date_added: string;
+  date_added: Date;
   release_year: number;
   rating: string;
   duration: string;

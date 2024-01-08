@@ -34,6 +34,7 @@ export class SignupContentComponent {
 
   onSubmit() {
     this.http.post<AuthRes>(`${this.apiUrl}/auth/signup`, this.formData)
+    // this.http.post<AuthRes>(`localhost:3000/auth/signup`, this.formData)
       .subscribe({
         next: (v) => {
           localStorage.setItem("token", v.token);

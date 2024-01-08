@@ -2,7 +2,10 @@
   <div class="row row-cols-3">
     <ng-container *ngIf="!notFound; else notFoundBlock">
       <div class="col mb-3.5" *ngFor="let video of videos">
-        <div class="p-3"><app-video-tile [video]="video" (click)="handleClick(video.show_id)"></app-video-tile></div>
+        <div class="p-3">
+          <app-video-tile [video]="video" (click)="handleClick(video.show_id)">
+          </app-video-tile>
+        </div>
       </div>
     </ng-container>
     <ng-template #notFoundBlock>

@@ -12,7 +12,7 @@ export class VideoDetailService {
       title: '',
       director: '',
       country: '',
-      date_added: '',
+      date_added: new Date(),
       release_year: 0,
       rating: '',
       duration: '',
