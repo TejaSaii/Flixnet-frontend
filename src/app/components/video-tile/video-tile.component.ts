@@ -27,7 +27,6 @@ export class VideoTileComponent implements OnInit{
       const date = new Date(this.video.date_added);
       const formattedDate = date.toLocaleDateString('en-US', this.options);
       this.stringDate = formattedDate;
-      console.log(this.stringDate)
     }
   }
 
